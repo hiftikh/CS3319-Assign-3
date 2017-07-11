@@ -1,0 +1,152 @@
+<html><head>
+    <title>Haris Iftikhar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet" type="text/css">
+  </head><body>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">{{ firstname }} {{ lastname }}</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+            <a href="{{ url_for('home') }}">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section text-center">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 text-center">
+            <h1 class="text-center text-muted">Staff</h1>
+            <div class="col-md-12 text-center">
+              <div class="btn-group btn-group-sm">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Movies&nbsp;<span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{{ url_for('addMovie') }}">Add</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('deleteMovie') }}">Delete</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('modifyMovie') }}">Modify</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('listMovie') }}">List All Movies</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="btn-group btn-group-sm">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Genres&nbsp;<span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{{ url_for('addGenre') }}">Add</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('deleteGenre') }}">Delete</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('listGenre') }}">List All Genres</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="btn-group btn-group-sm">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Rooms&nbsp;<span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{{ url_for('addRoom') }}">Add</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('deleteRoom') }}">Delete</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('modifyRoom') }}">Modify</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('listRoom') }}">List All Rooms</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="btn-group btn-group-sm">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Showings&nbsp;<span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{{ url_for('addShowing') }}">Add</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('deleteShowing') }}">Delete</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('modifyShowing') }}">Modify</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('listShowing') }}">List All Showings</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="btn-group btn-group-sm">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Customer&nbsp;<span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{{ url_for('addCustomer') }}">Add</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('deleteCustomer') }}">Delete</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('modifyCustomer') }}">Modify</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('listCustomer') }}">List All Customers</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="btn-group btn-group-sm">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Attend&nbsp;<span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{{ url_for('listAttendee') }}">List All Attendees</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section text-center">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <form class="text-center" action="/addGenreButton" method="post">
+              <div class="form-group">
+                <input class="form-control" id="exampleInputEmail1" placeholder="Enter Movie ID" type="text" name="idMovie">
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="exampleInputPassword1" placeholder="Enter Genre" type="text" name="Genre">
+              </div>
+              <button type="submit" class="btn btn-default">Add Genre</button>
+            </form>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
